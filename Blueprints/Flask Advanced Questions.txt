@@ -1,0 +1,108 @@
+from flask import Flask, g, request, url_for, render_template, redirect,session,Blueprint
+
+app = Flask(__name__)
+
+hello = 'Venky'
+
+with app.app_context():
+    g.my_db = "database"
+    print(g.my_db,hello)
+
+
+Name some famous Flask -Extensions?
+-------------------------------------
+Flask-Sijax (simple ajax)
+Flask-Admin extension
+Flask-Appbuilder
+Flask-Social along with Flask-Security
+Flask-WTF
+Flask-MongoEngine
+
+Accessing headers and args in Flask?
+--------------------------------------
+val = request.args.get("var")
+user_agent = request.headers.get('User-Agent')
+
+url_for is used to dynamic routes
+
+Why flask is called microframework?
+--------------------------------------
+
+Flask is called a microframework because flask only provides core features such as
+request, routing and blueprints
+
+and other features such as Caching, ORM, forms, etc.. we need to make use of Flask extensions
+
+
+benefits of using Flask microframework:
+---------------------------------------
+1. inbuilt development server
+2. vast thrid party extensions 
+3. has a tiny API and can be quickly learned by developers
+4. WSGI compliant
+5. supports unicode
+
+How to connect Databse in Flask?
+--------------------------------
+
+Flask-SQLAlchemy, which elemenates the need to write complex SQL queries and is an 
+ORM to interact with the SQLite database.fetch_db_values
+
+Thread local objects in Flask:
+------------------------------
+
+In Flask, thread-safety has been provided out of the box. we can use objects such as 
+current_app, g, and request without worrying about problems related to locking and concurrancy. 
+Moreover, we need not pass objects from methods to methods and these objects generally available
+within a valid request context. 
+
+
+
+Each request in Flask has a seperate g object. 
+and g is related to application context.
+Flask g object saves us from accidental modification of self-defined global variables.
+
+
+if you want to store the data between requests use session object. 
+
+
+What is application context in Flask?
+--------------------------------------
+
+It is relates to the idea of complete request/response cycle. it keeps the track of 
+application level data during a request. we make use of g and current_app proxies to achieve the same
+
+There is a situation when it is difficult to directly import the flask app
+eg: Flask extensions 
+    Blueprints 
+
+Moreover introducing applications may raise the problem of circullar import
+
+Flask pushes the application context with each request. therefore during a request 
+functions can use current_app and g 
+
+Creating RESTful applications in Flask?
+---------------------------------------
+using extensions
+
+1. Flask-API
+2. Flask-RESTful
+
+What type of applications can we create with Flask?
+---------------------------------------------------
+1. Single page applications
+2. RESTful API based applications
+3. SAS applications
+4. Small to medium size websites
+5. static websites
+6. microservices  and serverless applications
+
+How many ways can a reqeust context can be created in Flask?
+------------------------------------------------------------
+Two ways
+1. when user sends the request 
+2. by using app.test_request_context()
+
+Pickling and unpickling in python?
+----------------------------------
+to make portable and serialized representation of Python objects is called pickling 
