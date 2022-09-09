@@ -27,4 +27,4 @@ app.errorhandler(NotFoundError)(handle_not_found_error)
 
 
 if __name__ =="__main__":
-	app.run(debug=True)
+	app.run(debug=True,port=6000)
