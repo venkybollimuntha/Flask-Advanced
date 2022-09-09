@@ -1,5 +1,5 @@
 from flask import Blueprint
-from extensions import extend_headers
+from extensions import extend_headers, #db
 from flask_cors import cross_origin
 from decorator_helpers import require_appkey
 
@@ -34,3 +34,11 @@ def leaves():
 @require_appkey
 def roots():
     return "Venky has legs as well"
+
+#@venky.route('/dbcheck')
+#@require_appkey
+# def db_method():
+#     account = Account.query.filter(Account.request_id == id,).first()
+#     account.name ="venkyBollimuntha"
+#     db.session.add(account)
+#     db.session.commit()
